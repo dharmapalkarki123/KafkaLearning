@@ -1,9 +1,17 @@
 package com.kafak.consumer.consumer;
-import com.kafak.consumer.dto.Customer;
-import org.slf4j.Logger;
+
+import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+
+import com.kafak.consumer.dto.Customer;
+
+
+
+
+
+
 
 
 
