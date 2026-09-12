@@ -1,9 +1,10 @@
 spring:
   kafka:
     consumer:
-     
       group-id: jt-group-5
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: "*"
+        spring.json.trusted.packages: "com.kafak.consumer.dto"
+        spring.json.value.default.type: com.kafak.consumer.dto.Customer
+        spring.json.use.type.headers: false

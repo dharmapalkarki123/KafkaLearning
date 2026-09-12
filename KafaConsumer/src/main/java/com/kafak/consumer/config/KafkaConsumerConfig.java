@@ -27,11 +27,11 @@
 //        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 //        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
 //
-//    
+//
 //        props.put(JsonDeserializer.TRUSTED_PACKAGES, "com.kafak.consumer.dto");
 //        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "com.kafak.consumer.dto.Customer");
 //
-//     
+//
 //        props.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false);
 //
 //        return new DefaultKafkaConsumerFactory<>(props);
@@ -50,7 +50,7 @@
 //
 //        factory.setConsumerFactory(consumerFactory());
 //
-//     
+//
 //        factory.setCommonErrorHandler(errorHandler());
 //
 //        return factory;
