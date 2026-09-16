@@ -21,25 +21,30 @@ public class KafkaMessagePublisher {
 
 
     public void sendMessageToTopic(String message) {
-        CompletableFuture<SendResult<String, Object>> future = template.send("kafkalearning7", message);
-        future.whenComplete((result, ex) -> {
+//        CompletableFuture<SendResult<String, Object>> future = template.send("kafkalearning8",0,null, message);
+//        future.whenComplete((result, ex) -> {
+//
+//            if (ex == null) {
+//
+//                System.out.println("Sent message=[" + message + "] with offset=[" + result.getRecordMetadata().offset() + "]");
+//
+//
+//            } else {
+//
+//                System.out.println("Unable to send message=[" +
+//                        message + "] due to: " + ex.getMessage()
+//                );
+//
+//
+//            }
+//
+//        });
 
-            if (ex == null) {
-
-                System.out.println("Sent message=[" + message + "] with offset=[" + result.getRecordMetadata().offset() + "]");
-
-
-            } else {
-
-                System.out.println("Unable to send message=[" +
-                        message + "] due to: " + ex.getMessage()
-                );
-
-
-            }
-
-        });
-
+        template.send("kafkalearning",3,null, "hi");
+        template.send("kafkalearning",1,null, "hello");
+        template.send("kafkalearning",2,null, "welcome");
+        template.send("kafkalearning",2,null, "kafka");
+        template.send("kafkalearning",0,null, "learning");
 
     }
 
