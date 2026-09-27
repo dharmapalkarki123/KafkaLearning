@@ -2,6 +2,7 @@ package com.kafaknew.kafkaerrorhandling.controller;
 
 import com.kafaknew.kafkaerrorhandling.dto.User;
 import com.kafaknew.kafkaerrorhandling.publisher.KafkaMessagePublisher;
+import com.kafaknew.kafkaerrorhandling.util.CsvReadersUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +23,9 @@ public class EventController {
     @PostMapping("/publishNew")
     public ResponseEntity<?> publishEvent(@RequestBody User user) {
         try {
-            List<User> users = CsvReaderUtils.readDataFromCsv();
-            users.forEach(usr -> publisher.sendEvents(usr));
+//            List<User> users = CsvReadersUtils.readDataFromCsv();
+//            users.forEach(usr -> publisher.sendEvents(usr));
+            publisher.sendEvents(user);
             return ResponseEntity.ok("Message published successfully");
         } catch (Exception exception) {
             return ResponseEntity.
