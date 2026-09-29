@@ -40,11 +40,11 @@ public class OrderProducer {
                 new OrderEvent(orderId, 3, "OrderShipped", Instant.now()));
         kafkaTemplate.send(topicName,
                 new OrderEvent(orderId, 4, "OrderDelivered", Instant.now()));
-        System.out.println("Completed processing order without key: " + orderId);
+        System.out.println(" Completed processing order without key: " + orderId);
     }
 
     public void processOrderWithPartitionKey(String orderId) {
-        System.out.println("Processing order without key: " + orderId);
+        System.out.println("Processing order with partition  key: " + orderId);
         kafkaTemplate.send(topicName,orderId,
                 new OrderEvent(orderId, 1, "OrderPlaced", Instant.now()));
         kafkaTemplate.send(topicName,orderId,
@@ -53,7 +53,7 @@ public class OrderProducer {
                 new OrderEvent(orderId, 3, "OrderShipped", Instant.now()));
         kafkaTemplate.send(topicName,orderId,
                 new OrderEvent(orderId, 4, "OrderDelivered", Instant.now()));
-        System.out.println("Completed processing order without key: " + orderId);
+        System.out.println("Completed processing order with partition key : " + orderId);
     }
 
 

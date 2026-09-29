@@ -4,8 +4,8 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-        #properties:
-      #partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner
+#      properties:
+#         partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner
     consumer:
       group-id: order-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -13,5 +13,5 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
 
-#    listener:
-#      type: BATCH
+    listener:
+      type: batch
